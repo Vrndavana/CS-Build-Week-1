@@ -24,7 +24,7 @@ class Box extends React.Component {
 // Grid 
 class Grid extends React.Component {
 	render() {
-		const width = (this.props.cols * 14);
+		const width = (this.props.cols * 20);
 		var rowsArr = [];
 
 		var boxClass = "";
