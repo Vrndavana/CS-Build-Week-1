@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { ButtonToolbar, DropdownButton } from 'react-bootstrap';
+import { ButtonToolbar } from 'react-bootstrap';
 
+// Box
 class Box extends React.Component {
 	selectBox = () => {
 		this.props.selectBox(this.props.row, this.props.col);
 	}
-
 	render() {
 		return (
 			<div
@@ -18,7 +18,10 @@ class Box extends React.Component {
 		);
 	}
 }
+// End of Box Code
 
+
+// Grid 
 class Grid extends React.Component {
 	render() {
 		const width = (this.props.cols * 14);
@@ -50,7 +53,10 @@ class Grid extends React.Component {
 		);
 	}
 }
+// End of Grid Code
 
+
+// Buttons
 class Buttons extends React.Component {
 
 	handleSelect = (evt) => {
@@ -93,7 +99,10 @@ class Buttons extends React.Component {
 			)
 	}
 }
+// End of Buttons Code
 
+
+// Game Logic 
 class Main extends React.Component {
 	constructor() {
 		super();
@@ -229,6 +238,7 @@ class Main extends React.Component {
 		);
 	}
 }
+// End of Game Logic
 
 function arrayClone(arr) {
 	return JSON.parse(JSON.stringify(arr));
