@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { ButtonToolbar } from 'react-bootstrap';
+import { ButtonToolbar, Dropdown, DropdownButton } from 'react-bootstrap';
 
 // Box
 class Box extends React.Component {
@@ -64,6 +64,7 @@ class Buttons extends React.Component {
 	}
 
 	render() {
+	
 		return (
 			<div className="center">
 				<ButtonToolbar>
@@ -85,16 +86,18 @@ class Buttons extends React.Component {
 					<button className="btn btn-default" onClick={this.props.seed}>
 					  Seed
 					</button>
-					{/* <DropdownButton
+					<DropdownButton
 						title="Grid Size"
-						id="size-menu"
+						id="bg-nested-dropdown"
 						onSelect={this.handleSelect}
 					>
-						<MenuItem eventKey="1">20x10</MenuItem>
-						<MenuItem eventKey="2">50x30</MenuItem>
-						<MenuItem eventKey="3">70x50</MenuItem>
-					</DropdownButton> */}
+						<Dropdown.Item eventKey="1">20x10</Dropdown.Item>
+						<Dropdown.Item eventKey="2">50x30</Dropdown.Item>
+						<Dropdown.Item eventKey="3">70x50</Dropdown.Item>
+					</DropdownButton>
 				</ButtonToolbar>
+
+		
 			</div>
 			)
 	}
@@ -234,6 +237,27 @@ class Main extends React.Component {
 					selectBox={this.selectBox}
 				/>
 				<h2>Generations: {this.state.generation}</h2>
+				<p class="Notes">General concept:
+The Game of Life is a cellular automaton devised by the British mathematician John Horton Conway in 1970. It is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input.
+One interacts with the Game of Life by creating an initial configuration and observing how it evolves. It is Turing complete and can simulate a universal constructor or any other Turing machine.
+Rules:
+The universe of the Game of Life is an infinite, two-dimensional orthogonal grid of square cells, each of which is in one of two possible states, live or dead, (or populated and unpopulated, respectively). Every cell interacts with its eight neighbours. At each step in time, the following transitions occur:
+Any live cell with fewer than two live neighbours dies, as if by underpopulation.
+Any live cell with two or three live neighbours lives on to the next generation.
+Any live cell with more than three live neighbours dies, as if by overpopulation.
+Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
+These rules, which compare the behavior of the automaton to real life, can be condensed into the following:
+Any live cell with two or three live neighbours survives.
+Any dead cell with three live neighbours becomes a live cell.
+All other live cells die in the next generation. Similarly, all other dead cells stay dead.
+The initial pattern constitutes the seed of the system. The next generation is created by applying the above rules simultaneously to every cell in the seed; births and deaths occur simultaneously.
+History:
+In late 1940, John von Neumann defined life as a creation (as a being or organism) which can reproduce itself and simulate a Turing machine.
+In computer science, Turing completeness is a classification for a system of rules that manipulate data. It is named after computer scientist Alan Turing, inventor of the Turing machine.
+Motivated by questions in mathematical logic and in part by work on simulation games by Ulam, among others, John Conway began doing experiments in 1968 with a variety of different two-dimensional cellular automaton rules.
+The game made its first public appearance in the October 1970 issue of Scientific American, in Martin Gardner's "Mathematical Games" column. Theoretically, the Game of Life has the power of a universal Turing machine: anything that can be computed algorithmically can be computed within the Game of Life.
+Scholars in various fields, such as computer science, physics, biology, biochemistry, economics, mathematics, philosophy, and generative sciences, have made use of the way that complex patterns can emerge from the implementation of the game's simple rules.
+ </p>
 			</div>
 		);
 	}
